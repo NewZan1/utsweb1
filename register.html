@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style1.css" />
+    <link rel="stylesheet" href="bootstrap-5.3.2-dist/css/bootstrap.min.css" />
+    <title>Register Page</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container main">
+        <div class="row">
+          <div class="col-md-6 side-image">
+            <img src="images/png.png" alt="" />
+          </div>
+          <div class="col-md-6 right">
+            <div class="input-box">
+                <header>Register</header>
+                <div class="input-field">
+                    <input type="text" class="input" id="username" required/>
+                    <label for="text">Username</label>
+                </div>
+                <div class="input-field">
+                    <input type="email" class="input" id="email" required/>
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" class="input" id="password" required />
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-field">
+                    <input type="submit" class="submit" value="Register" onclick="checkFields()" />
+                </div>
+                <div class="signin">
+                    <span>Already Have an Account? <a href="login.html">Login Here</a></span>
+                </div>
+           </div>
+          </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+          <p>&copy; Copyright by 21552011130_Fauzan Azmi Fadhilah_TIF RP 221 PA</p>
+        </div>
+    </footer>
+
+    <script>
+        function checkFields() {
+         var username = document.getElementById("username").value;
+         var email = document.getElementById("email").value;
+         var password = document.getElementById("password").value;
+         var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        
+         if (username == "" || email == "" || password == "") {
+            alert("Please enter your username, email, and password!");
+         } else if (!emailRegex.test(email)) {
+            alert("Please enter a valid email address!");
+         } else {
+            window.location.href = "login.html";
+         }
+        }
+        </script>
+        
+  </body>
+</html>
